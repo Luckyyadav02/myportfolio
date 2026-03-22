@@ -101,7 +101,7 @@ const Hero = () => {
 
               {/* REPLACE src WITH YOUR IMAGE */}
               <img
-                src="/profile.jpeg"
+                src="/img2.png"
                 alt="Lucky Yadav"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'relative', zIndex: 0 }}
               />
