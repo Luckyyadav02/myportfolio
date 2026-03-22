@@ -7,7 +7,7 @@ import TechStack from './components/TechStack';
 import Projects from './components/Projects';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
-
+// lucky
 function App() {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
