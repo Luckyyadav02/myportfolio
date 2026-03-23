@@ -86,7 +86,7 @@ const TechStack = () => {
                             <motion.div whileHover={{ x: 10, color: 'var(--text-primary)' }} className="skill-item" style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.05rem', color: 'var(--text-secondary)' }}>
               <img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" alt="Excel" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
             <span>Excel</span>
-         </motion.div>
+           </motion.div>
                             <motion.div whileHover={{ x: 10, color: 'var(--text-primary)' }} className="skill-item" style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.05rem', color: 'var(--text-secondary)' }}>
                                 <i className="devicon-vscode-plain colored" style={{ fontSize: '1.5rem', width: '30px', textAlign: 'center' }}></i>
                                 <span>VS Code</span>
