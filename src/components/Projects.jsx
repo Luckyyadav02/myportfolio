@@ -14,7 +14,8 @@ const Projects = () => {
                 "Improved interpretability by identifying the most influential features affecting heart disease risk."
             ],
             tech: ["Python", "Scikit-Learn", "Pandas", "Matplotlib"],
-            icon: <HeartPulse size={48} color="rgba(255,255,255,0.2)" />
+            icon: <HeartPulse size={48} color="rgba(255,255,255,0.2)" />,
+            githubLink: "https://github.com/Luckyyadav02/ML-heart-disease-prediction"
         },
         {
             title: "Sales Insights – Sales Data Analysis & Prediction",
@@ -26,7 +27,8 @@ const Projects = () => {
                 "Enabled data-driven decision-making using clear visual dashboards."
             ],
             tech: ["Python", "Pandas", "Streamlit", "Power BI", "Linear Regression"],
-            icon: <LineChart size={48} color="rgba(255,255,255,0.2)" />
+            icon: <LineChart size={48} color="rgba(255,255,255,0.2)" />,
+            githubLink: "https://github.com/Luckyyadav02/sales_insites"
         }
     ];
 
@@ -81,7 +83,7 @@ const Projects = () => {
                                     <a href="#" className="btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', borderRadius: '4px', fontSize: '0.85rem', border: '1px solid var(--accent-primary)' }}>
                                         <ExternalLink size={14} /> View Demo
                                     </a>
-                                    <a href="#" className="btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', borderRadius: '4px', fontSize: '0.85rem', border: '1px solid var(--accent-primary)' }}>
+                                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', borderRadius: '4px', fontSize: '0.85rem', border: '1px solid var(--accent-primary)' }}>
                                         <Github size={14} /> GitHub
                                     </a>
                                 </div>
