@@ -84,9 +84,9 @@ const TechStack = () => {
                                 <span>Power BI</span>
                             </motion.div>
                             <motion.div whileHover={{ x: 10, color: 'var(--text-primary)' }} className="skill-item" style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.05rem', color: 'var(--text-secondary)' }}>
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" alt="Excel" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
-                                <span>Excel</span>
-                            </motion.div>
+              <img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" alt="Excel" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
+            <span>Excel</span>
+         </motion.div>
                             <motion.div whileHover={{ x: 10, color: 'var(--text-primary)' }} className="skill-item" style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.05rem', color: 'var(--text-secondary)' }}>
                                 <i className="devicon-vscode-plain colored" style={{ fontSize: '1.5rem', width: '30px', textAlign: 'center' }}></i>
                                 <span>VS Code</span>
