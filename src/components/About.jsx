@@ -24,7 +24,7 @@ const About = () => {
                     style={{ maxWidth: '800px' }}
                 >
                     <div className="about-text glass-card" style={{ padding: '3rem', fontSize: '1.1rem', color: 'var(--text-secondary)' }}>
-                        <p style={{ marginBottom: '1.5rem' }}><strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Lucky Yadav</strong> is a Computer Science Engineering student at Lovely Professional University with a strong interest in Software Engineering, Full-Stack Development, and building scalable system architectures.</p>
+                        <p style={{ marginBottom: '1.5rem' }}><strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Lucky Yadav</strong> is a Computer Science Engineering student at Lovely Professional University with a strong interest in Software Engineering, Data Analysis, and building scalable system architectures.</p>
                         <p style={{ marginBottom: '1.5rem' }}>He has hands-on experience working with modern Web Technologies, Backend Frameworks, and Database Optimization. Through intense project-building, he has developed deep, practical skills in software lifecycle management and clean code principles.</p>
                         <p style={{ marginBottom: '1.5rem' }}>Lucky is passionate about continuous learning and proactively explores emerging technologies to develop applications that run faster, scale better, and provide exceptional user experiences.</p>
                         <p>His goal is to become an elite Software Engineer and contribute to building the infrastructure and applications of tomorrow.</p>
