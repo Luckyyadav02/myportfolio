@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Download } from 'lucide-react';
 
 const Hero = () => {
-  // 🔥 Roles
   const roles = [
     "Software Engineering Enthusiast",
     "Backend Developer",
@@ -25,12 +23,10 @@ const Hero = () => {
           : current.substring(0, prev.length + 1)
       );
 
-      // When word is fully typed
       if (!isDeleting && text === current) {
         setTimeout(() => setIsDeleting(true), 1000);
       }
 
-      // When word is deleted
       if (isDeleting && text === '') {
         setIsDeleting(false);
         setRoleIndex((prev) => (prev + 1) % roles.length);
@@ -89,15 +85,28 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.p variants={itemVariants} style={{ fontFamily: 'var(--font-mono)', color: 'var(--accent-primary)', marginBottom: '1.5rem' }}>
+          <motion.p
+            variants={itemVariants}
+            style={{
+              fontFamily: 'var(--font-mono)',
+              color: 'var(--accent-primary)',
+              marginBottom: '1.5rem',
+            }}
+          >
             Hi, my name is
           </motion.p>
 
-          <motion.h1 variants={itemVariants} style={{ fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', fontWeight: 800 }}>
+          <motion.h1
+            variants={itemVariants}
+            style={{
+              fontSize: 'clamp(2.5rem, 5vw, 4.2rem)',
+              fontWeight: 800,
+            }}
+          >
             Lucky Yadav
           </motion.h1>
 
-          {/* 🔥 Typing Effect */}
+          {/* Typing Effect */}
           <motion.h2
             variants={itemVariants}
             style={{
@@ -109,30 +118,47 @@ const Hero = () => {
           >
             <span className="gradient-text">
               {text}
-              <span style={{ borderRight: '2px solid', marginLeft: '5px' }}></span>
+              <span
+                style={{
+                  borderRight: '2px solid',
+                  marginLeft: '5px',
+                  animation: 'blink 1s infinite',
+                }}
+              ></span>
             </span>
           </motion.h2>
 
-          <motion.p variants={itemVariants} style={{ marginBottom: '2.5rem' }}>
-            Passionate about building scalable applications and solving real-world problems.
+          <motion.p
+            variants={itemVariants}
+            style={{
+              marginBottom: '2.5rem',
+              color: 'var(--text-secondary)',
+            }}
+          >
+            Passionate about building highly scalable applications, solving complex problems, and designing user-centric systems.
           </motion.p>
 
-          <motion.div variants={itemVariants} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <motion.a href="#projects" className="btn btn-primary">View Projects</motion.a>
+          {/* Buttons */}
+          <motion.div
+            variants={itemVariants}
+            style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
+          >
+            <motion.a href="#projects" className="btn btn-primary">
+              View Projects
+            </motion.a>
 
             <motion.a href="#contact" className="btn btn-secondary">
               Contact Me
             </motion.a>
 
+            {/* 👁 View CV ONLY */}
             <motion.a
               href="/resume.pdf"
-              download
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-outline"
-              style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+              className="btn btn-secondary"
             >
-              <Download size={18} /> Resume
+              👁 View CV
             </motion.a>
           </motion.div>
         </motion.div>
@@ -141,16 +167,35 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
-          style={{ flex: '1 1 300px', display: 'flex', justifyContent: 'center' }}
+          transition={{ duration: 0.8 }}
+          style={{
+            flex: '1 1 300px',
+            display: 'flex',
+            justifyContent: 'center',
+          }}
         >
           <img
             src="/profile.jpeg"
-            alt="profile"
-            style={{ width: '300px', borderRadius: '20px' }}
+            alt="Lucky Yadav"
+            style={{
+              width: '300px',
+              borderRadius: '20px',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
+            }}
           />
         </motion.div>
-
       </div>
+
+      {/* Cursor Blink */}
+      <style>
+        {`
+          @keyframes blink {
+            0% { opacity: 1 }
+            50% { opacity: 0 }
+            100% { opacity: 1 }
+          }
+        `}
+      </style>
     </section>
   );
 };
