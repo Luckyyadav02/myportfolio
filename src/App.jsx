@@ -3,6 +3,7 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Academics from './components/Academics';
 import TechStack from './components/TechStack';
 import Projects from './components/Projects';
 import Certifications from './components/Certifications';
@@ -56,6 +57,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Academics />
         <TechStack />
         <Projects />
         <Certifications />
