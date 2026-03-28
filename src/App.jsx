@@ -7,6 +7,7 @@ import Academics from './components/Academics';
 import TechStack from './components/TechStack';
 import Projects from './components/Projects';
 import Certifications from './components/Certifications';
+import CodingProfiles from './components/CodingProfiles';
 import Contact from './components/Contact';
 // lucky
 function App() {
@@ -61,6 +62,7 @@ function App() {
         <TechStack />
         <Projects />
         <Certifications />
+        <CodingProfiles />
         <Contact />
       </main>
 

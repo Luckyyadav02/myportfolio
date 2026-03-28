@@ -90,7 +90,7 @@ const Contact = () => {
                     style={{ padding: '4rem' }}
                 >
                     <h2 className="section-title" style={{ marginBottom: '1rem' }}>
-                        <span>05.</span> Get In Touch
+                        <span>06.</span> Get In Touch
                     </h2>
                     <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', fontSize: '1.1rem', maxWidth: '600px' }}>
                         Interested in collaborating, discussing projects, or exploring opportunities? Feel free to reach out.
