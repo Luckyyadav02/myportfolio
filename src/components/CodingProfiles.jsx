@@ -133,7 +133,6 @@ export default function CodingProfiles() {
                         <span style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: '0.9rem' }}>
                             <CountUp end={value || 0} duration={2.5} />
                         </span> 
-                        {total > 0 && <span style={{ opacity: 0.4, fontSize: '0.75rem' }}> / {total}</span>}
                     </span>
                 </div>
                 <div style={{ height: '6px', background: 'var(--bg-secondary)', borderRadius: '10px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.03)' }}>
@@ -309,8 +308,7 @@ export default function CodingProfiles() {
                                 
                                 {/* Right Bars */}
                                 <div style={{ flex: '1 1 180px', display: 'flex', flexDirection: 'column', gap: '1rem', background: 'rgba(0,0,0,0.2)', padding: '1.25rem', borderRadius: '14px', border: '1px solid rgba(255,255,255,0.02)' }}>
-                                    <LinearProgress label="Basic/Sch." value={(gfgStats.Basic || 0) + (gfgStats.School || 0)} total={0} color="#00b8a3" />
-                                    <LinearProgress label="Easy" value={gfgStats.Easy || 0} total={0} color="#2f8d46" />
+                                    <LinearProgress label="Easy" value={(gfgStats.Basic || 0) + (gfgStats.School || 0) + (gfgStats.Easy || 0)} total={0} color="#00b8a3" />
                                     <LinearProgress label="Medium" value={gfgStats.Medium || 0} total={0} color="#ffc01e" />
                                     <LinearProgress label="Hard" value={gfgStats.Hard || 0} total={0} color="#ef4743" />
                                 </div>
