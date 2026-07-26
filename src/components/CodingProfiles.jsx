@@ -12,10 +12,10 @@ export default function CodingProfiles() {
     useEffect(() => {
         const fetchLeetCode = async () => {
             try {
-                const response = await fetch('https://leetcode-stats-api.herokuapp.com/Luckyyadav302');
+                const response = await fetch('https://alfa-leetcode-api.onrender.com/userProfile/Luckyyadav302');
                 if (!response.ok) throw new Error("API not okay");
                 const data = await response.json();
-                if (data.status === "success" || data.totalSolved !== undefined) {
+                if (data.totalSolved !== undefined) {
                     setLeetCodeStats(data);
                 } else {
                     throw new Error("Invalid LeetCode format");
@@ -23,15 +23,15 @@ export default function CodingProfiles() {
             } catch (error) {
                 console.error("Failed to fetch LeetCode stats, using fallback", error);
                 setLeetCodeStats({
-                    totalSolved: 84,
-                    totalQuestions: 3879,
-                    easySolved: 47,
-                    totalEasy: 933,
-                    mediumSolved: 32,
-                    totalMedium: 2030,
-                    hardSolved: 5,
-                    totalHard: 916,
-                    ranking: 1689866,
+                    totalSolved: 112,
+                    totalQuestions: 4003,
+                    easySolved: 63,
+                    totalEasy: 956,
+                    mediumSolved: 43,
+                    totalMedium: 2091,
+                    hardSolved: 6,
+                    totalHard: 956,
+                    ranking: 1463761,
                     isFallback: true
                 });
             } finally {

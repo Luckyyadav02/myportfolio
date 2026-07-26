@@ -1,97 +1,236 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, HeartPulse, LineChart } from 'lucide-react';
 
-const Projects = () => {
-    const projects = [
-        {
-            title: "Heart Disease Prediction Using Machine Learning",
-            desc: "Developed a machine learning model to predict the risk of heart disease using healthcare data.",
-            highlights: [
-                "Cleaned and preprocessed messy cardiovascular data by handling missing values and removing outliers.",
-                "Performed exploratory data analysis to identify important health indicators.",
-                "Trained and optimized multiple machine learning models to achieve approximately 80% prediction accuracy.",
-                "Improved interpretability by identifying the most influential features affecting heart disease risk."
-            ],
-            tech: ["Python", "Scikit-Learn", "Pandas", "Matplotlib"],
-            icon: <HeartPulse size={48} color="rgba(255,255,255,0.2)" />
-        },
-        {
-            title: "Sales Insights – Sales Data Analysis & Prediction",
-            desc: "Built an interactive sales analytics dashboard to analyze business performance and forecast future sales.",
-            highlights: [
-                "Developed a Streamlit dashboard integrating data visualization and prediction models.",
-                "Used Linear Regression to forecast future sales with approximately 85% accuracy.",
-                "Identified sales trends, seasonal patterns, and product performance insights.",
-                "Enabled data-driven decision-making using clear visual dashboards."
-            ],
-            tech: ["Python", "Pandas", "Streamlit", "Power BI", "Linear Regression"],
-            icon: <LineChart size={48} color="rgba(255,255,255,0.2)" />
-        }
-    ];
+const projects = [
+    {
+        title: "Heart Disease Prediction",
+        subtitle: "Machine Learning · Healthcare AI",
+        desc: "Developed a machine learning model to predict the risk of heart disease using real-world cardiovascular data.",
+        highlights: [
+            "Cleaned & preprocessed messy cardiovascular data — handled missing values & outliers.",
+            "Performed EDA to identify key health indicators driving risk.",
+            "Trained & optimized multiple ML models achieving ~80% prediction accuracy.",
+            "Improved interpretability by ranking the most influential risk features.",
+        ],
+        tech: ["Python", "Scikit-Learn", "Pandas", "Matplotlib"],
+        image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
+        accent: "#ff3366",
+        accentSoft: "rgba(255,51,102,0.15)",
+        icon: <HeartPulse size={22} />,
+        github: "https://github.com/Luckyyadav02",
+        demo: "#",
+    },
+    {
+        title: "Sales Insights Dashboard",
+        subtitle: "Data Analysis · Forecasting",
+        desc: "Built an interactive sales analytics dashboard to analyze business performance and forecast future sales trends.",
+        highlights: [
+            "Developed a Streamlit dashboard integrating data visualization & prediction models.",
+            "Used Linear Regression to forecast future sales with ~85% accuracy.",
+            "Identified seasonal trends, patterns, and product performance insights.",
+            "Enabled data-driven decisions through clear, interactive visual dashboards.",
+        ],
+        tech: ["Python", "Pandas", "Streamlit", "Power BI", "Linear Regression"],
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+        accent: "#ff9933",
+        accentSoft: "rgba(255,153,51,0.15)",
+        icon: <LineChart size={22} />,
+        github: "https://github.com/Luckyyadav02",
+        demo: "#",
+    },
+];
+
+const ProjectCard = ({ project, idx }) => {
+    const [hovered, setHovered] = useState(false);
 
     return (
-        <section id="projects" className="section-padding">
-            <div className="container">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="section-title"
-                >
-                    <span>03.</span> Featured Projects
-                </motion.h2>
+        <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: idx * 0.15, duration: 0.6 }}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            style={{
+                position: 'relative',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                background: 'rgba(255,255,255,0.03)',
+                border: `1px solid ${hovered ? project.accent + '66' : 'var(--border-glass)'}`,
+                boxShadow: hovered ? `0 30px 60px ${project.accent}33` : '0 4px 20px rgba(0,0,0,0.2)',
+                transform: hovered ? 'translateY(-12px)' : 'translateY(0)',
+                transition: 'all 0.4s cubic-bezier(0.23, 1, 0.32, 1)',
+                display: 'flex',
+                flexDirection: 'column',
+            }}
+        >
+            {/* ── Image Banner ── */}
+            <div style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
+                <img
+                    src={project.image}
+                    alt={project.title}
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        transform: hovered ? 'scale(1.08)' : 'scale(1)',
+                        transition: 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)',
+                        filter: 'brightness(0.55)',
+                    }}
+                />
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2.5rem' }}>
-                    {projects.map((project, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.2 }}
-                            whileHover={{ y: -15, scale: 1.03, boxShadow: '0 25px 50px rgba(255,51,102,0.3)', borderColor: 'rgba(255,51,102,0.4)' }}
-                            className="glass-card"
-                            style={{ display: 'flex', flexDirection: 'column', height: '100%', overflow: 'hidden', transition: 'box-shadow 0.3s ease, border-color 0.3s ease' }}
-                        >
-                            <div style={{ width: '100%', height: '200px', borderBottom: '1px solid var(--border-glass)', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, rgba(255, 51, 102, 0.1) 0%, rgba(255, 153, 51, 0.1) 100%)' }}>
-                                {project.icon}
-                            </div>
-                            <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                                <h3 style={{ fontSize: '1.4rem', marginBottom: '0.8rem', color: 'var(--text-primary)' }}>{project.title}</h3>
-                                <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.95rem' }}>{project.desc}</p>
+                {/* gradient overlay */}
+                <div style={{
+                    position: 'absolute', inset: 0,
+                    background: `linear-gradient(to bottom, ${project.accent}22 0%, rgba(0,0,0,0.7) 100%)`,
+                }} />
 
-                                <ul style={{ marginBottom: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                                    {project.highlights.map((item, i) => (
-                                        <li key={i} style={{ fontSize: '0.9rem', color: 'var(--text-muted)', position: 'relative', paddingLeft: '1.2rem' }}>
-                                            <span style={{ position: 'absolute', left: 0, color: 'var(--accent-primary)' }}>▹</span> {item}
-                                        </li>
-                                    ))}
-                                </ul>
+                {/* icon badge */}
+                <div style={{
+                    position: 'absolute', top: '1.2rem', left: '1.2rem',
+                    display: 'flex', alignItems: 'center', gap: '0.5rem',
+                    background: project.accentSoft,
+                    border: `1px solid ${project.accent}55`,
+                    backdropFilter: 'blur(8px)',
+                    borderRadius: '30px',
+                    padding: '0.4rem 0.9rem',
+                    color: project.accent,
+                    fontSize: '0.8rem',
+                    fontWeight: 600,
+                }}>
+                    {project.icon}
+                    {project.subtitle}
+                </div>
 
-                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginTop: 'auto', marginBottom: '2rem' }}>
-                                    {project.tech.map(t => (
-                                        <span key={t} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--accent-secondary)', background: 'rgba(255, 153, 51, 0.1)', padding: '0.3rem 0.8rem', borderRadius: '4px' }}>
-                                            {t}
-                                        </span>
-                                    ))}
-                                </div>
-
-                                <div style={{ display: 'flex', gap: '1rem' }}>
-                                    <a href="#" className="btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', borderRadius: '4px', fontSize: '0.85rem', border: '1px solid var(--accent-primary)' }}>
-                                        <ExternalLink size={14} /> View Demo
-                                    </a>
-                                    <a href="https://github.com/Luckyyadav00" className="btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', borderRadius: '4px', fontSize: '0.85rem', border: '1px solid var(--accent-primary)' }}>
-                                        <Github size={14} /> GitHub
-                                    </a>
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
+                {/* title over image */}
+                <div style={{ position: 'absolute', bottom: '1.2rem', left: '1.4rem', right: '1.4rem' }}>
+                    <h3 style={{
+                        fontSize: '1.45rem',
+                        fontWeight: 700,
+                        color: '#fff',
+                        textShadow: '0 2px 12px rgba(0,0,0,0.7)',
+                        margin: 0,
+                    }}>
+                        {project.title}
+                    </h3>
                 </div>
             </div>
-        </section>
+
+            {/* ── Body ── */}
+            <div style={{ padding: '1.8rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.2rem', lineHeight: 1.6 }}>
+                    {project.desc}
+                </p>
+
+                {/* highlights */}
+                <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem', marginBottom: '1.6rem', paddingLeft: 0, listStyle: 'none' }}>
+                    {project.highlights.map((item, i) => (
+                        <li key={i} style={{ display: 'flex', gap: '0.6rem', fontSize: '0.88rem', color: 'var(--text-muted)', alignItems: 'flex-start' }}>
+                            <span style={{ color: project.accent, flexShrink: 0, marginTop: '2px' }}>▹</span>
+                            {item}
+                        </li>
+                    ))}
+                </ul>
+
+                {/* tech pills */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', marginBottom: '1.8rem', marginTop: 'auto' }}>
+                    {project.tech.map(t => (
+                        <span key={t} style={{
+                            fontFamily: 'var(--font-mono)',
+                            fontSize: '0.75rem',
+                            color: project.accent,
+                            background: project.accentSoft,
+                            border: `1px solid ${project.accent}44`,
+                            padding: '0.25rem 0.75rem',
+                            borderRadius: '20px',
+                            letterSpacing: '0.02em',
+                        }}>
+                            {t}
+                        </span>
+                    ))}
+                </div>
+
+                {/* action buttons */}
+                <div style={{ display: 'flex', gap: '0.8rem' }}>
+                    <a
+                        href={project.demo}
+                        style={{
+                            flex: 1,
+                            display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.45rem',
+                            padding: '0.65rem 1rem',
+                            borderRadius: '8px',
+                            fontSize: '0.85rem',
+                            fontWeight: 600,
+                            background: hovered ? project.accent : 'transparent',
+                            border: `1px solid ${project.accent}`,
+                            color: hovered ? '#fff' : project.accent,
+                            transition: 'all 0.3s',
+                            textDecoration: 'none',
+                        }}
+                    >
+                        <ExternalLink size={14} /> Live Demo
+                    </a>
+                    <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{
+                            flex: 1,
+                            display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.45rem',
+                            padding: '0.65rem 1rem',
+                            borderRadius: '8px',
+                            fontSize: '0.85rem',
+                            fontWeight: 600,
+                            background: 'rgba(255,255,255,0.05)',
+                            border: '1px solid var(--border-glass)',
+                            color: 'var(--text-secondary)',
+                            transition: 'all 0.3s',
+                            textDecoration: 'none',
+                        }}
+                        onMouseOver={e => { e.currentTarget.style.borderColor = project.accent; e.currentTarget.style.color = project.accent; }}
+                        onMouseOut={e => { e.currentTarget.style.borderColor = 'var(--border-glass)'; e.currentTarget.style.color = 'var(--text-secondary)'; }}
+                    >
+                        <Github size={14} /> GitHub
+                    </a>
+                </div>
+            </div>
+
+            {/* glow border line at bottom on hover */}
+            <div style={{
+                position: 'absolute', bottom: 0, left: 0, right: 0,
+                height: '3px',
+                background: `linear-gradient(90deg, transparent, ${project.accent}, transparent)`,
+                opacity: hovered ? 1 : 0,
+                transition: 'opacity 0.4s',
+            }} />
+        </motion.div>
     );
 };
+
+const Projects = () => (
+    <section id="projects" className="section-padding">
+        <div className="container">
+            <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="section-title"
+            >
+                <span>03.</span> Featured Projects
+            </motion.h2>
+
+            <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
+                gap: '2.5rem',
+            }}>
+                {projects.map((project, idx) => (
+                    <ProjectCard key={idx} project={project} idx={idx} />
+                ))}
+            </div>
+        </div>
+    </section>
+);
 
 export default Projects;
