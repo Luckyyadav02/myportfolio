@@ -75,6 +75,24 @@ const projects = [
         github: "https://github.com/Luckyyadav02/SpringBoot-Rest-API-CRUD-operations",
         demo: "#",
     },
+    {
+        title: "Power BI Dashboards",
+        subtitle: "Data Visualization · Business Intelligence",
+        desc: "A collection of interactive Power BI dashboards providing deep business insights across sales, HR, and financial domains with rich visual storytelling.",
+        highlights: [
+            "Designed multi-page dashboards with drill-through filters & cross-report navigation.",
+            "Built dynamic KPI cards, trend charts, and geo-maps for real-time business monitoring.",
+            "Applied DAX measures for calculated metrics — YoY growth, moving averages & rankings.",
+            "Transformed raw data using Power Query for clean, model-ready datasets.",
+        ],
+        tech: ["Power BI", "DAX", "Power Query", "Data Modeling", "Excel"],
+        image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",
+        accent: "#10b981",
+        accentSoft: "rgba(16,185,129,0.15)",
+        icon: <LineChart size={22} />,
+        github: "https://github.com/Luckyyadav02/POWERBI-DASHBOARDS-",
+        demo: "#",
+    },
 ];
 
 const ProjectCard = ({ project, idx }) => {
