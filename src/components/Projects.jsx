@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, HeartPulse, LineChart } from 'lucide-react';
+import { ExternalLink, Github, HeartPulse, LineChart, Hospital, Server } from 'lucide-react';
 
 const projects = [
     {
@@ -37,6 +37,42 @@ const projects = [
         accentSoft: "rgba(255,153,51,0.15)",
         icon: <LineChart size={22} />,
         github: "https://github.com/Luckyyadav02",
+        demo: "#",
+    },
+    {
+        title: "Hospital Management System",
+        subtitle: "Java · OOP · Backend",
+        desc: "A comprehensive Hospital Management System built in Java using core OOP principles to manage patients, doctors, appointments, and billing operations.",
+        highlights: [
+            "Designed modular class hierarchy — Patient, Doctor, Appointment, and Billing entities.",
+            "Implemented CRUD operations for patient registration and doctor scheduling.",
+            "Applied inheritance & polymorphism for clean, extensible system architecture.",
+            "Managed appointment conflict detection and automated billing calculations.",
+        ],
+        tech: ["Java", "OOP", "Collections", "File I/O"],
+        image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&q=80",
+        accent: "#00d4ff",
+        accentSoft: "rgba(0,212,255,0.15)",
+        icon: <Hospital size={22} />,
+        github: "https://github.com/Luckyyadav02/Hospital_Management_System",
+        demo: "#",
+    },
+    {
+        title: "SpringBoot REST API",
+        subtitle: "Spring Boot · REST · CRUD",
+        desc: "A production-ready RESTful API built with Spring Boot demonstrating full CRUD operations, layered architecture, and database integration.",
+        highlights: [
+            "Built RESTful endpoints following industry-standard HTTP methods & status codes.",
+            "Implemented layered architecture — Controller, Service, Repository (Spring Data JPA).",
+            "Integrated MySQL database with Hibernate ORM for persistent data management.",
+            "Tested all endpoints using Postman with proper request/response validation.",
+        ],
+        tech: ["Java", "Spring Boot", "Spring Data JPA", "MySQL", "REST API"],
+        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+        accent: "#a855f7",
+        accentSoft: "rgba(168,85,247,0.15)",
+        icon: <Server size={22} />,
+        github: "https://github.com/Luckyyadav02/SpringBoot-Rest-API-CRUD-operations",
         demo: "#",
     },
 ];
