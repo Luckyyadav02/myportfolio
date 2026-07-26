@@ -10,7 +10,7 @@ const Academics = () => {
             institution: "Lovely Professional University",
             location: "Phagwara, Punjab",
             duration: "Aug ’2023 - Present",
-            grade: "CGPA: 7.51",
+            grade: "CGPA: 7.57",
             icon: <GraduationCap size={28} color="#fff" />,
             color: "var(--accent-primary)",
             glow: "rgba(255, 51, 102, 0.4)"
@@ -21,7 +21,7 @@ const Academics = () => {
             institution: "Modern BP Public School",
             location: "Faridabad, Haryana",
             duration: "Apr ’2020 – Mar ’2022",
-            grade: "Percentage: 81.4%",
+            grade: "Percentage: 80.8%",
             icon: <BookOpen size={28} color="#fff" />,
             color: "var(--accent-secondary, #FF9933)", // Fallback if variable doesn't exist
             glow: "rgba(255, 153, 51, 0.4)"
